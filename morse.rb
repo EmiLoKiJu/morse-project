@@ -38,7 +38,6 @@ def decode_morse_word(morse_word)
   characters.each do |char|
     @text += decode_morse_character(char)
   end
-  # print @text
   @text
 end
 
@@ -49,8 +48,8 @@ def morse_to_text(morsetext)
   words.each do |word|
     @phrase += decode_morse_word(word) + " "
   end
-  print @phrase
-  @phrase[0..-1]
+  print @phrase.strip
+  @phrase.strip
 end
 
-morse_to_text('-- -.--   -. .- -- .')
+morse_to_text('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
