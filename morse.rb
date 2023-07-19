@@ -1,5 +1,6 @@
 # method to decode a Morse code character
 
+# rubocop:disable Metrics/MethodLength
 def decode_morse_character(morse_character)
   morse_equals = {
     '.-' => 'A',
@@ -31,6 +32,7 @@ def decode_morse_character(morse_character)
   }
   morse_equals[morse_character] || ''
 end
+# rubocop:enable Metrics/MethodLength
 
 # method to decode an entire word in Morse code
 def decode_morse_word(morse_word)
