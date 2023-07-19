@@ -28,7 +28,6 @@ def decode_morse_character(morse_character)
     '-.--' => 'Y',
     '--..' => 'Z'
   }
-
   @morse_equals[morse_character] || ''
 end
 
@@ -36,18 +35,22 @@ end
 def decode_morse_word(morse_word)
   @text = ""
   characters = morse_word.split(' ')
-  characters.each { |char| text+= decode_morse_character(char)}
-  print text
-  text
+  characters.each do |char|
+    @text += decode_morse_character(char)
+  end
+  # print @text
+  @text
 end
 
+# Create a method to decode the entire message in Morse code
 def morse_to_text(morsetext)
+  @phrase = ""
   words = morsetext.split('   ')
-  decode_morse_word(words[0])
-    # def change_characters
-        
-    # characters.each_with_index { |char, i| characters[i] = Morse_equals[char] || '' }
-    # print characters
+  words.each do |word|
+    @phrase += decode_morse_word(word) + " "
+  end
+  print @phrase
+  @phrase[0..-1]
 end
 
 morse_to_text('-- -.--   -. .- -- .')
