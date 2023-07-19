@@ -1,4 +1,4 @@
-# method to decode a Morse code character, takes a string parameter, and return the corresponding character in uppercase
+# method to decode a Morse code character
 def decode_morse_character(morse_character)
   @morse_equals = {
     '.-' => 'A',
@@ -33,8 +33,8 @@ end
 
 # method to decode an entire word in Morse code
 def decode_morse_word(morse_word)
-  @text = ""
-  characters = morse_word.split(' ')
+  @text = ''
+  characters = morse_word.split
   characters.each do |char|
     @text += decode_morse_character(char)
   end
@@ -43,10 +43,10 @@ end
 
 # Create a method to decode the entire message in Morse code
 def morse_to_text(morsetext)
-  @phrase = ""
+  @phrase = ''
   words = morsetext.split('   ')
   words.each do |word|
-    @phrase += decode_morse_word(word) + " "
+    @phrase += "#{decode_morse_word(word)} "
   end
   print @phrase.strip
   @phrase.strip
