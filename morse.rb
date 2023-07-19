@@ -1,6 +1,7 @@
 # method to decode a Morse code character
+
 def decode_morse_character(morse_character)
-  @morse_equals = {
+  morse_equals = {
     '.-' => 'A',
     '-...' => 'B',
     '-.-.' => 'C',
@@ -28,7 +29,7 @@ def decode_morse_character(morse_character)
     '-.--' => 'Y',
     '--..' => 'Z'
   }
-  @morse_equals[morse_character] || ''
+  morse_equals[morse_character] || ''
 end
 
 # method to decode an entire word in Morse code
